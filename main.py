@@ -1,67 +1,69 @@
-# Typecasting = a process of converting a variable from one data type to another!
-#str(), int(), float(), bool()
-#especially useful for handling user input, since it's mainly str().
+#Arithemtic & Math
 
-# name = "Sova42"
-# experience = 17
-# version = 42.24
-# is_online = True
+#Augmented Assignment Operators
+# friends = 10
+# print(friends)
 
-# print(type(is_online))
-# print(type(version))
+#instead of writing friends = friends + 1, write →
+#friends += 1, or basically any other action +-*/
 
-# version = int(version)
-# print(version)
+# friends *=5
+# print(friends)
+# friends /=2
+# print(friends)
+# powerOf = friends ** 4300
+# print(friends)
 
-# experience = float(experience)
-# print(experience)
+# remainder = friends % 3
+# print(remainder)
 
-# Could be used for entering a name/login/password
-# name = bool(name)
-# print(name)
+# x = 3.14
+# y = 69
+# z = -1
 
-# input () = A function that prompts the user to enter a data.
-#            Returns the entered data as a string.
-
-# name = input("What is your name?")
-# print(f"Hello {name}!! :3")
+# result = round(x)
+# result = abs(z)
+# result = pow(x, 3)
+# result = max(x,y,z)
+# result = min(x,y,z)
 #
-# float = input("What is your exact GPA?")
-# print(f"You dumbass nigga!")
+# print(result)
+
+# import math
 #
-# age = input("Anyway, how old are you?")
-# #Use typecasting, since can't add int to str.
-# #Or enclose an input with a typecast -> int(input("")) or bool(input("")) !
-# age = int(age)
-# age = age + 1
-# print(f"You're going to be {age} years old next year!.")
-
-#Exercise #1 – Rectangle area calculation
-
-# lenght = float(input("What's the lenght of the rectangle?"))
-# width = float(input("What's the width of the rectangle?"))
-# area = lenght * width
+# x = 9.1
 #
-# print(f"The area of the rectangle is → {area}")
-
-#Exercise #2 - Shopping cart program
-
-# item = input("What item would you like to purchase?")
-# price = float(input("What's the price of your item?"))
-# quantity = int(input("How many would you like to purchase?"))
+# # print(math.pi)
+# # print(math.e)
+# # result = math.sqrt(x) square root.
+# # result = math.ceil(x) rounds the number up.
+# # result = math.floor(x) rounds the number down.
 #
-# total = price * quantity
-# print(f"Your total price is ${total}")
+# print(result)
 
-# Madlibs game – word game where create a story by filling in blanks with random words
+import math
 
-# noun1 = input("Enter the first noun (thing): ")
-# adjective1 = input("Enter the first adjective (description): ")
-# noun2 = input("Enter the second noun (thing): ")
-# adjective2 = input("Enter the second adjective (description): ")
-# verb1 = input("Enter the a verb (action): ")
+# Exercise #1 Circle circumference calculation C = 2πr
+
+# radius = float(input("Enter the radius of the circle: "))
+# circumference = 2 * math.pi * radius
+# print(f"The circumference of the circle is: {round(circumference, 2)}")
+# #{round(circumference, 2)} → is responsible for rounding the answer to a given decimal place.
+
+# Exercise #2 Circle area calculation A = πr^2
+
+# radius = float(input("Enter radius: "))
 #
-# print(f"I woke up in a strange place, probably in {noun1}.")
-# print(f"After some time I heard a weird noise, seemed rahter {adjective1}.")
-# print(f"It was {noun2} HIMSELF! pretty {adjective2}.")
-# print(f"Consfused I started {verb1}, and woke up the second time. It was just a dream.")
+# area = math.pi * pow(radius, 2)
+# print(f"The area of the circle is {round(area, 2)}")
+
+# Exercise #3 Right triangle hypotenuse calculation c = √a^2+b^2
+
+firstPage = float(input("Enter lenght of first page: "))
+secondPage = float(input("Enter lenght of second page: "))
+
+hypostenuseLength = math.sqrt(pow(firstPage, 2) + pow(secondPage, 2))
+print(f"Hypostenuse length: {hypostenuseLength}")
+
+
+
