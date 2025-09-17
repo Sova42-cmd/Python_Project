@@ -64,4 +64,4 @@
 # print(f"I woke up in a strange place, probably in {noun1}.")
 # print(f"After some time I heard a weird noise, seemed rahter {adjective1}.")
 # print(f"It was {noun2} HIMSELF! pretty {adjective2}.")
-# print(f"Consfused I started {verb1}, and woke up the second time. It was just a dream.")
+# print(f"Consfused I started {verb1}, and woke up the second time. It was just a dream.").
