@@ -1,74 +1,63 @@
-# Logical operators = evaluate multiple conditions (or, and, not)
-#                     or = at least one condition must be true.
-#                     and = both conditions must be true.
-#                     not = inverts the conditions (not False, not True)
+# String methods
 
-#or
-# temp = 25
-# is_raining = False
+# name = input("What is your name? ")
+# phone_number = input("What is your phone number?: ")
+
+# result = len(name)
+# result = name.find(" ")
+# .find() locates when the selected symbol appears first.
+# .rfind() does the same but reversed.
+# result = name.rfind("a")
+# .capitilize capitilizes only the FIRST letter
+# name = name.capitalize()
+# name = name.upper()
+# .upper/lower() makes ALL the letters uppercase
+# name = name.lower()
+# .isdigit() returns either true or false, based on whether the input is digit or not
+#   gives false with mixted inputs too – Sova42 – False
+# name = name.isdigit()
+# name = name.isalpha()
+# .isalpha() check the input for alphabetical symbols, numbers/spaces – returns False
+# phone_number = phone_number.replace(" ", "–")
+# .replace() is the most important one!!!
+
+# Many more strin methods can be found by – print(help(str))
+
+# print(help(str))
+
+# Exercise – validate user input
+# 1. username is no more than 12 characthers.
+# 2. username must not contain spaces.
+# 3. username must not contain digits.
+
+# username = input("Enter your username: ")
 #
-# if temp > 35 or temp < 10 or is_raining:
-#     print("No picnic today, bad weather :(")
+# if len(username) > 12:
+#     print("Your username cannot be more than 12 characters.")
+# elif not username.find (" ") == -1:
+#     print("Your username cannot contain any spaces")
+# elif not username.isalpha():
+#     print("Your username cannot contain any digits")
 # else:
-#     print("Picnic today!")
+#     print(f"Welcome {username}")
 
-#and
-# temp = -20
-# is_sunny = True
-#
-# if 20 < temp < 50 and is_sunny:
-#     print("Sunny weather! a perfect day for a picnic!")
-# elif 8 < temp < 20 and is_sunny:
-#     print("Rather cold, but sunny")
-# elif -100 < temp < 8 and is_sunny:
-#     print("Sunny... but real cold, it's probably winter")
+# String indexing = accessing elements of sequence using [] (indexing operator)
+#                     [start : end : step]
 
-#not
-# temp = 0
-# is_sunny = True
+card_number = "4321-1234-9010-0010"
 
-# if temp <= 5 and is_sunny:
-#     print("Rather cold today, but sunny!")
-# if 5 <= temp <= 16 and is_sunny:
-#     print("Light cold, but sunny!")
-# if 16 <= temp <= 24 and is_sunny:
-#     print("Great weather today, sunny")
-# if 24 <= temp <= 40 and is_sunny:
-#     print("Getting hot already!, sunny")
-# if 40 <= temp and is_sunny:
-#     print("good luck surviving this heat!, sunny af")
-# #now really not operator
-# if temp <= 5 and not is_sunny:
-#     print("Rather cold today, and cloud")
-# if 5 <= temp <= 16 and not is_sunny:
-#     print("Light cold, and cloudy!")
-# if 16 <= temp <= 24 and not is_sunny:
-#     print("Great weather today, but cloudy")
-# if 24 <= temp <= 40 and not is_sunny:
-#     print("Getting hot already, but cloudy!")
-# if 40 <= temp and not is_sunny:
-#     print("good luck surviving this heat!, somehow f*cking cloudy tho")
+# print(card_number[0]) only first digit.
+# print(card_number[:4]) first 4 digits.
+# print(card_number[5:9]) from 5th to 9th digits.
+# print(card_number[9:]) from 9th to the end.
+# print(card_number[-1]) only last digit.
+# print(card_number[::2]) returns every second digit.
+# print(card_number[::3]) returns every third digit.
 
-# conditional expression = A one-line shortcut for if-else statement (ternary expression)
-#                            Print or assign one of two values based on condition
-#                            X if condition else Y
+# last_digits = card_number[15:]
+# last_digits = card_number[-4:]
+# print(f"XXXX-XXXX-XXXX-{last_digits}")
 
-# num = 42
-# a = 100
-# b = 101
-# age = 19
-# temp = 21
-# user_role = "admin"
-# print("postivie" if num > 0 else "negative")
-# print("even" if num % 2 == 0 else "odd")
-# print(a if a > b else "b is greater than a")
-# print(a if a < b else "a is less than b")
-# print(a if a == b else "a is not equal to b")
-# status = "Big dawg" if age >=18 else "Tiny winny"
-# weather = "Perfect" if 17 < temp < 22 else "meh"
-# permission = "welcome capitan!" if user_role == "admin" else "permission denied"
-passkey = 1234
-user_input = int(input("Enter the pin: "))
-print("Welcome Boss" if user_input == passkey else "Try again")
-
-
+card_number = card_number[::-1]
+# [::-1] reverses the order of whole credit card.
+print(card_number)
