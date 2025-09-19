@@ -1,43 +1,36 @@
-# Python very basic calculator
-# my version
+# Weight converter
 
-# firstNumber = float(input("Enter first number: "))
-# secondNumber = float(input("Enter second number: "))
+# weight = float(input("Enter your weight: "))
+# unit = str(input("is your weight in kg or lb? (for kg type in 1, for lb type in 2): "))
 #
-# operetor = str(input("What should we do dawg? → +,-,*,/: "))
+# if unit == "1":
+#     weight = weight * 2.205
+#     print(f"Your weight is {round(weight, 2)} in eagles per freedom!")
+# elif unit == "2":
+#     weight = weight * 0.45
+#     print(f"Your weight is {round(weight, 2)} in kilograms!")
+# else:
+#     print("Invalid input!")
+
+
+# Temperature conversion program
+
+# temp = float(input("What's the temperature outside?: "))
+# unit = input("Celsius or Fahrenheit? (c/f): ")
 #
-# if operetor == "+":
-#     print(firstNumber + secondNumber)
-# elif operetor == "-":
-#     print(firstNumber - secondNumber)
-# elif operetor == "*":
-#     print(firstNumber * secondNumber)
-# elif operetor == "/":
-#     print(firstNumber / secondNumber)
+#
+# if unit == "c":
+#     temp = temp * 1.8 + 32
+#     print(f"temperature in F is {round(temp, 2)}")
+# elif unit == "f":
+#     # temp = temp - 32
+#     # temp = temp * 0.555
+#     temp = (temp - 32) * 5/9
+#     print(f"temperature in normal units is {round(temp, 2)}")
+# else:
+#     print("Something went wrong :(")
 
-# yt version
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-operator = str(input("Enter an operator (+ - * /) → "))
-
-if operator == "+":
-    result = num1 + num2
-    print(round(result, 2))
-elif operator == "-":
-    result = num1 - num2
-    print(round(result, 2))
-elif operator == "*":
-    result = num1 * num2
-    print(round(result, 2))
-elif operator == "/":
-    result = num1 / num2
-    print(round(result, 2))
-else:
-    print(f"Something went wrong, I can't {operator} your numbers.")
-
-# yt's code is more detailed, I'll consider that in the future.
 
 
 
