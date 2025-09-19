@@ -53,13 +53,12 @@
 #                            Print or assign one of two values based on condition
 #                            X if condition else Y
 
-num = 42
-a = 100
-b = 101
-age = 19
-temp = 21
-user_role = "admin"
-passkey = 1234
+# num = 42
+# a = 100
+# b = 101
+# age = 19
+# temp = 21
+# user_role = "admin"
 # print("postivie" if num > 0 else "negative")
 # print("even" if num % 2 == 0 else "odd")
 # print(a if a > b else "b is greater than a")
@@ -68,7 +67,8 @@ passkey = 1234
 # status = "Big dawg" if age >=18 else "Tiny winny"
 # weather = "Perfect" if 17 < temp < 22 else "meh"
 # permission = "welcome capitan!" if user_role == "admin" else "permission denied"
-# user_input = int(input("Enter the pin: "))
-# print("Welcome Boss" if user_input == passkey else "Try again")
+passkey = 1234
+user_input = int(input("Enter the pin: "))
+print("Welcome Boss" if user_input == passkey else "Try again")
 
 
