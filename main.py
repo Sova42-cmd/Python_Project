@@ -1,63 +1,68 @@
-# String methods
+# format specifiers = {value: flags} format a value based on what flags are insterted
 
-# name = input("What is your name? ")
-# phone_number = input("What is your phone number?: ")
+# price1 = 3000000.14159
+# price2 = -420.69
+# price3 = 99.19
 
-# result = len(name)
-# result = name.find(" ")
-# .find() locates when the selected symbol appears first.
-# .rfind() does the same but reversed.
-# result = name.rfind("a")
-# .capitilize capitilizes only the FIRST letter
-# name = name.capitalize()
-# name = name.upper()
-# .upper/lower() makes ALL the letters uppercase
-# name = name.lower()
-# .isdigit() returns either true or false, based on whether the input is digit or not
-#   gives false with mixted inputs too – Sova42 – False
-# name = name.isdigit()
-# name = name.isalpha()
-# .isalpha() check the input for alphabetical symbols, numbers/spaces – returns False
-# phone_number = phone_number.replace(" ", "–")
-# .replace() is the most important one!!!
+# print(f"Price 1 is {price1: .2f}")
+# print(f"Price 2 is {price2: .3f}")
+# print(f"Price 3 is {price3: .1f}")
+# same as {round(price, 2/3/1)}
 
-# Many more strin methods can be found by – print(help(str))
+# print(f"Price 1 is {price1:<10}")
+# print(f"Price 2 is {price2:>100}")
+# print(f"Price 3 is {price3:^50}")
+# space lenght before the numbers.
+# < justifies the spaces to the left.
+# > justfies the spaces to the right.
+# ^ justifies the spaces to the center.
 
-# print(help(str))
+# print(f"Price 1 is {price1:+,.2f}")
+# print(f"Price 2 is {price2:+,}")
+# print(f"Price 3 is {price3:+,}")
+# , separates each thousand with , +3,000,000.14
 
-# Exercise – validate user input
-# 1. username is no more than 12 characthers.
-# 2. username must not contain spaces.
-# 3. username must not contain digits.
+# While loops = execute some code WHILE some condition remains true!
 
-# username = input("Enter your username: ")
+# name = input("What's your name?: ")
 #
-# if len(username) > 12:
-#     print("Your username cannot be more than 12 characters.")
-# elif not username.find (" ") == -1:
-#     print("Your username cannot contain any spaces")
-# elif not username.isalpha():
-#     print("Your username cannot contain any digits")
+# while name == "":
+#     print("You didn't enter a name")
+#     name = input("What's your name?: ")
 # else:
-#     print(f"Welcome {username}")
+#     print(f"Hi {name}")
 
-# String indexing = accessing elements of sequence using [] (indexing operator)
-#                     [start : end : step]
+# promt = input("A̴̡̝̜̬̲̱̙͌́̈́̓͗n̷̯̱̠͚͕͆̀̀̌̔͜͠ ̷̧̣̤͙͈̙̥̙͕̠͓̟̼͙̩͂͐̚͝ẻ̵̙͍̯̗̤͗ỹ̴̢͎͚͖̱̗̟͙͈̳̞́̒́͋̐́̇̊̓͠ę̷͔̮̥̝̏̏́̋̓͂́̃̇̇̍l̶̢̡̛͕͙̲͚̲̣̯̞ĕ̸̢̞͔̞͙͚̱͖̰͉͍̟̩͔̈̈́͘͘͜͝͝s̴̜̘̟̣̮̰͚̯͌̽͛̒̽̀͐͗͗́͌͘͝s̵̹̗̝̞̬̮̞͖̼͋͂͛́̑̋ ̷͉͕̩̹̯͉̓́́͛̓́̑̾a̵̢̛͉̰̰̘̩̓̓̀͂b̴̘̜͖͔̄͒̉͌͑̊̽̾̉̂͛͘õ̸̢̺̳͙̘̗̔̕m̴̲̟͎͋̆͒̒̆̂̓̿̏̋̆͊̄̅i̶͕̦͙͔̱͓̤̠͎̇̄̂̚͝ǹ̸̨̡̬̣͕̪̭͇͈̪̟̮̮̩̄a̵͍̹̅̾͒̊͋̔t̷̝̩̘͉̰̺̮͙̘̃͂̉̀͛̑̀̿̎̈̔̄͝ï̴̢̢̺͙̔̈́̊̽̇͆̀̐̌̽̽̚͝ơ̶̧̛̩̬̭͎̤̝̲̲̪͓̩̰̋̇͛̔̀͌͗͘͘n̸̛̘̒̃̈́͑̋̑̀͆̔̒͛̀̅͘ ̸̧͍̗͈͚͕̰̭̟̮̝̪̇̃̋͒̐͛͑̅̚͠w̵̦̐̈́̽̅͑̌̾̍̈́̉̕͘̚i̷̜͋̍̓̃̾̓t̸̢̢̢̺̥͓͚̟̳̪͎̰̹̬̿̽͐͐͒̉̅̔̑͜ḩ̸̳̩͕̩̹̤̣̭͖̮͍̏͋̅͋̓̑̎̈́̈́̈́̌̀̚͘̚ ̶̧̧̼͕̹̠̞̻̼̅̈́̉s̶̨̛̞̞̦̦͖̲̩͔͙̟̣̫̘͎̆̅̈́̒͂͛̇̑͒̅̕͘͝͠ḙ̵̡̟̦͔̮̬̩̲̭̜͂ͅv̸͙͖́̈͆̾͜ͅȩ̸͎͓͓͍̐̊͐̃̈́͑́̇̏̾̕n̸̛̠̲̱̯̰͑̏͊͊͑̃͛̚ ̴̢̜͕͖̱̜̗̩̜̓̒̆m̵̧̲̦͓̺̜̗͚̜̞͇̠̈́̕͘͠o̶̧̨̢͈̯͚͈̠̝͕̤͙͗͌̚͜͝ͅȕ̴̲͓͎̕ṯ̴̨̞͇͖͉̈́̾̈́̾͊̉̏̅͛͗̈́͝ĥ̵̨̛̩͇͇̬̘̗̱̮͙̼̄͂̈́̈́̋̌̈͑̈ͅš̶̴̢̼̼̬̘͓͕̭̜͕͖̱̜̗̩̜͗̽̓̒̆̚͝m̵̧̲̦͓̺̜̗͚̜̞͇̠̈́̕͘͠o̶̧̨̢͈̯͚͈̠̝͕̤͙͗͌̚͜͝ͅȕ̴̲͓͎̕ṯ̴̨̞͇͖͉̈́̾̈́̾͊̉̏̅͛͗̈́͝ĥ̵̨̛̩͇͇̬̘̗̱̮͙̼̄͂̈́̈́̋̌̈͑̈ͅš̶̴̢̼̼̬̘͓͕̭̜͕͖̱̜̗̩̜͗̽̓̒̆̚͝m̵̧̲̦͓̺̜̗͚̜̞͇̠̈́̕͘͠o̶̧̨̢͈̯͚͈̠̝͕̤͙͗͌̚͜͝ͅȕ̴̲͓͎̕ṯ̴̨̞͇͖͉̈́̾̈́̾͊̉̏̅͛͗̈́͝ĥ̵̨̛̩͇͇̬̘̗̱̮͙̼̄͂̈́̈́̋̌̈͑̈ͅš̶̼̼̬̘͓͕̭͗̽̚͝.̸̀̈͘???͝: ̢")
+#
+# while promt == "what?":
+#     print("LET ME OUT")
+# Hahha scary kinda
 
-card_number = "4321-1234-9010-0010"
+# age = int(input("How old are you?: "))
+#
+# while age < 0:
+#     print("Something went wrong, try again")
+#     age = int(input("How old are you?: "))
+# else:
+#     print(f"You're {age} years old")
 
-# print(card_number[0]) only first digit.
-# print(card_number[:4]) first 4 digits.
-# print(card_number[5:9]) from 5th to 9th digits.
-# print(card_number[9:]) from 9th to the end.
-# print(card_number[-1]) only last digit.
-# print(card_number[::2]) returns every second digit.
-# print(card_number[::3]) returns every third digit.
+# food = input("What food do you like? (enter q to exit): ")
+#
+# while not food == "q":
+#     print(f"I like {food} too!")
+#     food = input("What else do you like? (enter q to exit): ")
+# else:
+#     print("Goodbye!")
 
-# last_digits = card_number[15:]
-# last_digits = card_number[-4:]
-# print(f"XXXX-XXXX-XXXX-{last_digits}")
+num = int(input("Guess a number from 1 to 10: "))
 
-card_number = card_number[::-1]
-# [::-1] reverses the order of whole credit card.
-print(card_number)
+while num < 1 or num > 10:
+    print("Wrong!")
+    num = int(input("Enter a number from 1 to 10: "))
+else:
+    print(f"Is your number... {num}? Hehe")
+
+
+
+
+
