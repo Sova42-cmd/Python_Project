@@ -4,18 +4,33 @@ initBalance = 0
 time = 0
 rate = 0
 
-while initBalance <= 0:
+# while initBalance <= 0:
+#     initBalance = float(input("Enter your initial balance (in $): "))
+#     if initBalance <= 0:
+#         print("can't be negative or zero")
+#     elif initBalance > 0:
+#         print(f"Your initial balance is {initBalance}, confirm? (y/n): ")
+#     elif initialBalance == "y":
+#         print(f"Your inital balance is {initBalance}")
+#     elif initBalance == "n":
+#         initBalance = float((input("Enter your initial balance (in $): ")))
+# else:
+#     print(f"Your initial balance is {initBalance}")
+
+while True:
     initBalance = float(input("Enter your initial balance (in $): "))
+
     if initBalance <= 0:
-        print("can't be negative or zero")
-    # elif initBalance > 0:
-        # print(f"Your initial balance is {initBalance}, confirm? (y/n): ")
-    # elif initialBalance == "y":
-    #     print(f"Your inital balance is {initBalance}")
-    # elif initBalance == "n":
-    #     initBalance = float((input("Enter your initial balance (in $): ")))
-else:
-    print(f"Your initial balance is {initBalance}")
+        print("Can't be negative or zero.")
+        continue  # go back to start of loop
+
+    confirm = input(f"Your initial balance is {initBalance}. Confirm? (y/n): ").lower()
+
+    if confirm == "y":
+        print(f"Your initial balance is set to {initBalance}")
+        break  # exit the loop
+    else:
+        print("Okay, let's try again.")
 
 while rate <= 0:
     rate = float(input("Enter rate of change in % (e.g. 30%): "))
