@@ -1,51 +1,86 @@
-# for loops = execute a block of code a fixed number of times.
-#             you can iterate over a range, string, sequence, etc.
+# nested loops = a loop within another loop (outer, inner)
+#                outer loop:
+#                   inner loop:
+# for y in range(1,4):
+#     for x in range(1, 10):
+#         print(x, end=" ")
+#     print()
+
+# rows = int(input("Enter the amount of rows: "))
+# columns = int(input("Enter the amount of colums: "))
+# symbol = input("Enter the symbol: ")
 #
-# for x in range(1,11):
-#     print(x)
-#same but reversed ↓
-# for x in reversed(range(1,11)):→
-#     print(x)
-# print("Congrats!")
-#if x == something, continue → skips
-# for x in reversed(range(1,21)):
-#     if x == 13:
-#         continue
-#     print(x)
-# print("Congrats!")
+# for y in range (rows):
+#     for x in range(columns):
+#         print(symbol, end="")
+#     print()
 
-# break → stops at assign value.
-# for x in range(1,21):
-#     if x == 13:
-#         break
-#     print(x)
-# print("Congrats!")
+# collections = single "variable" used to store multiple values
+    #   List = [] ordered and changable. Duplicates OK
+    #   Set = {} unordered and immutable, but Add/Remove OK. NO duplicates.
+    #   Tuple = () ordered and unchagnable. Dubplicates OK. FASTER
+    #   Dictionary = ordered, mutable – for later.
 
-# countdown timer program!
+# List
+# albums = ["Bridges", "TWM", "Cryptic Writings", "Head Hunters"]
 
-# time.sleep(3)
-# print("Time's up!")
-# time.sleep just a timer, does nothing for 3 sec, then prints
+# print(albums[0]) #first element
+# print(albums[3]) #4th element
+# print(albums[:2]) #all elements until the 3rd one
 
-import time
+# print("TWM" in albums) #returns True
+# print("asd" in albums) #returns False
 
-# time.sleep(3)
-# print("Time's up!")
-# time.sleep just a timer, does nothing for 3 sec, then prints
+# albums.append("Octavarium") #adds an element to the end.
+# albums.remove("TWM") #removes selected element.
+# albums.insert(1, "Hot Rats") #insert element to prefered place.
+# albums.sort() #sorts elements alphabetically.
+# albums.reverse() #reverses current order of element.
+# albums.clear() #removes all the elements.
+# print(albums.count("TWM")) #counts how many of the same elements are there.
 
-my_time = int(input("Enter the time in seconds: "))
+# print(albums)
 
-# for x in reversed(range(0, my_time)): another technique to reverse ↓
-for x in range(my_time, 0, -1):
-    seconds = x % 60
-    minutes = int(x/60) % 60
-    hours = int(x/3600)
-    print(f"{hours:02}:{minutes:02}:{seconds:02}")
-    time.sleep(1) #duration of each second
+# Set
+# languages = {"Python", "JS", "Java", "C"}
 
-print("Time's up!")
+# print(languages[0]) # → can't do this, because sets are unordered
+# languages.remove("JS") # → acceptable
+# languages.add("php") # → acceptable
+# languages.pop() # → deleted first element (randomly)
+#
+# print(languages)
 
-# Tested in a different file whether this would work as a timer to shut down/sleep
-# and it did in fact work for sleep with os module.
+# Tuple
+# planets = ("Mercury", "Venus", "Earth", "Mars", "Saturn")
 
+#only two methods we have access to.
+
+# print(planets.index("Venus")) #Venus's index is 1.
+# print(planets.count("Earth")) #Only 1 Earth.
+
+# Shopping cart program
+
+foods = []
+prices = []
+total = 0
+
+while True:
+    food = input("Enter a food to purchase (enter q to exit): ")
+    if food.lower() == "q":
+        break
+    else:
+        price = float(input(f"Enter the price of {food}: "))
+        foods.append(food)
+        prices.append(price)
+
+print("–––Your Cart–––")
+
+for food in foods:
+    print(food, end=", ")
+
+for price in prices:
+    total += price
+
+print(f" – Your total is ${total}")
 
