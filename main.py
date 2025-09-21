@@ -1,47 +1,51 @@
-# Compound interest calculator
+# for loops = execute a block of code a fixed number of times.
+#             you can iterate over a range, string, sequence, etc.
+#
+# for x in range(1,11):
+#     print(x)
+#same but reversed ↓
+# for x in reversed(range(1,11)):→
+#     print(x)
+# print("Congrats!")
+#if x == something, continue → skips
+# for x in reversed(range(1,21)):
+#     if x == 13:
+#         continue
+#     print(x)
+# print("Congrats!")
 
-initBalance = 0
-time = 0
-rate = 0
+# break → stops at assign value.
+# for x in range(1,21):
+#     if x == 13:
+#         break
+#     print(x)
+# print("Congrats!")
 
-# while initBalance <= 0:
-#     initBalance = float(input("Enter your initial balance (in $): "))
-#     if initBalance <= 0:
-#         print("can't be negative or zero")
-#     elif initBalance > 0:
-#         print(f"Your initial balance is {initBalance}, confirm? (y/n): ")
-#     elif initialBalance == "y":
-#         print(f"Your inital balance is {initBalance}")
-#     elif initBalance == "n":
-#         initBalance = float((input("Enter your initial balance (in $): ")))
-# else:
-#     print(f"Your initial balance is {initBalance}")
+# countdown timer program!
 
-while True:
-    initBalance = float(input("Enter your initial balance (in $): "))
+# time.sleep(3)
+# print("Time's up!")
+# time.sleep just a timer, does nothing for 3 sec, then prints
 
-    if initBalance <= 0:
-        print("Can't be negative or zero.")
-        continue  # go back to start of loop
+import time
 
-    confirm = input(f"Your initial balance is {initBalance}. Confirm? (y/n): ").lower()
+# time.sleep(3)
+# print("Time's up!")
+# time.sleep just a timer, does nothing for 3 sec, then prints
 
-    if confirm == "y":
-        print(f"Your initial balance is set to {initBalance}")
-        break  # exit the loop
-    else:
-        print("Okay, let's try again.")
+my_time = int(input("Enter the time in seconds: "))
 
-while rate <= 0:
-    rate = float(input("Enter rate of change in % (e.g. 30%): "))
-    if rate <= 0:
-        print("can't be negative or zero")
-else:
-    print(f"Your rate of change is {rate}")
+# for x in reversed(range(0, my_time)): another technique to reverse ↓
+for x in range(my_time, 0, -1):
+    seconds = x % 60
+    minutes = int(x/60) % 60
+    hours = int(x/3600)
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+    time.sleep(1) #duration of each second
 
-while time <= 0:
-    time = float(input("Enter number of time periods (in years): "))
-    if time <= 0:
-        print("can't be negative or zero")
-else:
-    print(f"in {time} years you'll have this much green ${round(initBalance * (pow((rate/100)+1, time)), 3)}")
+print("Time's up!")
+
+# Tested in a different file whether this would work as a timer to shut down/sleep
+# and it did in fact work for sleep with os module.
+
+
