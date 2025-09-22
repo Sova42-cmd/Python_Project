@@ -1,62 +1,144 @@
-# dictionary = a collection of {key:value} pairs
-#              ordered AND changable. NO duplicates.
+import random
 
-# capitals = {"USA": "Washington",
-#             "India": "New Delhi",
-#             "Russia": "Moscow",
-#             "Armenia": "Yerevan"}
+# number = random.randint(1,1000)
+# print(number)
 
-# print(capitals.get("USA"))
-# capitals.update({"Germany":"Berling"}) #adds new element
-# capitals.update({"USA":"New York"}) #updates existing element
-# capitals.pop("Russia") #removes selected element
-# capitals.popitem() #removes last element
-# capitals.clear() #removes everything.
+# low = 1
+# high = 100
+# number = random.randint(low, high)
+# print(number)
 
-# keys = capitals.keys() #return only keys
-# for key in capitals.keys():
-#     print(key)
-
-# values = capitals.values()
-# for value in capitals.values():
-#     print(value)
+# options = ("Rock", "Paper", "Scissors ")
 #
-# items = capitals.items()
-# print(items)
-# works the same as
-# for key, value in capitals.items():
-#     print(f"The capital of {key} is – {value}")
+# option = random.choice(options)
+# print(option)
 
-# CONCESSION STAND PROGRAM!
-# dictionary {key:value}
+# cards = ["2", "3", "4,", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+# random.shuffle(cards)
+# print(cards)
 
-menu = {"soda(r)": 3.00,
-        "soda(l)": 4.50,
-        "popcorn(s)": 200.00,
-        "popcorn(l)": 450.50,
-        "coffee": 2.95,
-        "iced tea": 3.25,}
+#                       NUMBER GUESSING GAME!
+#
+# lowest_num = 1
+# highest_num = 100
+# answer = 42
+# guesses = 0
+# is_running = True
 
-cart = []
+# print("Guessing game!")
+# print(f"Select a number between {lowest_num} and {highest_num}")
+#
+# while is_running:
+#     guess = input("Enter your guess!: ")
+#     if guess.isdigit():
+#         guess = int(guess)
+#         guesses += 1
+#         if guess < lowest_num or guess > highest_num:
+#             print("That number is out of range!")
+#             print(f"Select a number between {lowest_num} and {highest_num}")
+#         elif guess < answer:
+#             print("Too low! Pick again!")
+#         elif guess > answer:
+#             print("Too high! Pick again!")
+#         else:
+#             print(f"YESSSSIRRRR! the answer was {answer}")
+#             print(f"Number of guesses it took: {guesses}")
+#             is_running = False
+#     else:
+#         print("Invalid guess, guess a number!")
+
+#                       ROCK PAPER SCISSORS GAME!!
+
+# options = ("rock", "paper", "scissors")
+# running = True
+#
+# while running:
+#
+#     player = None
+#     computer = random.choice(options)
+#
+#     while player not in options:
+#         player = input("Enter a choice (rock/paper/scissors): ")
+#
+#     print(f"Player: {player}")
+#     print(f"Computer: {computer}")
+#
+#     if player == computer:
+#         print("Tie!")
+#     elif player == "rock" and computer == "scissors":
+#         print("You won!")
+#     elif player == "paper" and computer == "rock":
+#         print("You won!")
+#     elif player == "scissors" and computer == "paper":
+#         print("You won!")
+#     else:
+#         print("You lost!")
+#
+#     # play_again = input("Play again? (y/n): ").lower()
+#     # if not play_again == "y":
+#     #     running = False
+#
+#     if not input("Play again? (y/n): ").lower() == "y":
+#         running = False
+#
+# print("Thanks for playing! :>")
+
+#                       DICE ROLLER PRORAM
+
+# print("\u25cf \u250c \u2500 \u2510 \u2502 \u2514 \u2518")
+#● ┌ ─ ┐ │ └ ┘
+
+
+
+dice_art = {
+  1: ("┌─────────┐",
+      "│         │",
+      "│    ●    │",
+      "│         │",
+      "└─────────┘"),
+  2: ("┌─────────┐",
+      "│  ●      │",
+      "│         │",
+      "│       ● │",
+      "└─────────┘"),
+  3: ("┌─────────┐",
+      "│  ●      │",
+      "│    ●    │",
+      "│       ● │",
+      "└─────────┘"),
+  4: ("┌─────────┐",
+      "│ ●     ● │",
+      "│         │",
+      "│ ●     ● │",
+      "└─────────┘"),
+  5: ("┌─────────┐",
+      "│ ●     ● │",
+      "│    ●    │",
+      "│ ●     ● │",
+      "└─────────┘"),
+  6: ("┌─────────┐",
+      "│ ●  ●  ● │",
+      "│         │",
+      "│ ●  ●  ● │",
+      "└─────────┘")
+}
+
+dice = []
 total = 0
+num_of_dice = int(input("How many dice?: "))
 
-print("–––––––––Menu–––––––––")
-for key, value in menu.items():
-    print(f"{key:5}: ${value:.2f}")
-print("––––––––––––––––––––––")
+for die in range(num_of_dice):
+    dice.append(random.randint(1,6 ))
 
-while True:
-    food = input("What would you like to buy? (enter q to exit): ").lower()
-    if food == "q":
-        print("Arrivederci!")
-        break
-    elif menu.get(food) is not None:
-        cart.append(food)
+# for die in range(num_of_dice):
+#     for line in dice_art.get(dice[die]):
+#         print(line)
 
-print("––––––––––Your order–––––––––––")
-for food in cart:
-    total += menu.get(food)
-    print(food, end=" ")
+for line in range(5):
+    for die in dice:
+        print(dice_art.get(die)[line], end=" ")
+    print()
 
-print()
-print(f"Total is: ${total:.2f}")
+for die in dice:
+    total += die
+print(f"total is {total}")
