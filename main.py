@@ -1,42 +1,51 @@
-# 2D collections
+# Quiz guessing game
 
-# movies = ["The Matrix", "Interstellar", "Blade Runner 2049"]
-# directors = ["Wachowskis", "Christopher Nolan", "Denis Villeneuve"]
-# years = [1999, 2014, 2017]
+questions = ("How many continents are there on Earth?",
+             "Who painted the Mona Lisa?",
+             "How many planets are in our solar system?",
+             "Which planet in the solar system is the hottest?",
+             "The center of a black hole is called the...")
 
-# cinema = [movies, directors, years]
-# print(cinema)
-# in order to access a specific element use
-# print(cinema[0][2]) # returns Blade Runner 2049, like coordinats
+options = (("A. 3", "B. 4", "C. 7", "D. 10"),
+           ("A. Claude Monet", "B. Vincent van Gogh ", "C. Jimi Hendrix", "D. Leonardo da Vinci"),
+           ("A. 8", "B. 7", "C. 14", "D. 9"),
+           ("A. Mercury", "B. Venus", "C. Mars", "D. Earth"),
+           ("A. Wormhole", "B. Singularity", "C. Event Horizon", "D. Eclipse"))
 
-# you also could do
-# cinema = [["The Matrix", "Interstellar", "Blade Runner 2049"],
-#           ["Wachowskis", "Christopher Nolan", "Denis Villeneuve"],
-#           [1999, 2014, 2017]]
-# print(cinema)
+answers = ("c", "d", "a", "b", "b")
+guesses = []
+score = 0
+question_num = 0
 
-# for collection in cinema:
-#     for stuff in collection:
-#         print(stuff, end=" ")
-#     print()
+for question in questions:
+    print("––––––––––––––––––")
+    print(question)
+    for option in options[question_num]:
+        print(option)
 
-# movies = ["The Matrix", "Interstellar", "Blade Runner 2049"]
-# directors = ["Wachowskis", "Christopher Nolan", "Denis Villeneuve"]
-# years = [1999, 2014, 2017]
-#
-# movie_info = list(zip(movies, directors,years)) #zip() brings together each [0][1]... element of each set,
-# print(movie_info) #movie_info[1] → all info about Interstellar etc.
+    guess = input("Enter you answer (a/b/c/d): ").lower()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("Correct!")
+    else:
+        print(f"Incorrect!")
+    question_num += 1
 
-# num_pad = ((1, 2, 3),
-#            (4, 5, 6),
-#            (7, 8, 9),
-#            ("*", 0, "#"))
-#
-# for row in num_pad:
-#     for num in row:
-#         print(num, end=" ")
-#     print()
+print("––––––––––––––––––")
+print("––––– Results –––––")
+print("––––––––––––––––––")
 
+print("Answers: ", end=" ")
+for answer in answers:
+    print(answer, end=" ")
+print()
 
+print("Your guesses: ", end=" ")
+for guess in guesses:
+    print(guess, end=" ")
+print()
 
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
 
