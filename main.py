@@ -1,51 +1,62 @@
-# Quiz guessing game
+# dictionary = a collection of {key:value} pairs
+#              ordered AND changable. NO duplicates.
 
-questions = ("How many continents are there on Earth?",
-             "Who painted the Mona Lisa?",
-             "How many planets are in our solar system?",
-             "Which planet in the solar system is the hottest?",
-             "The center of a black hole is called the...")
+# capitals = {"USA": "Washington",
+#             "India": "New Delhi",
+#             "Russia": "Moscow",
+#             "Armenia": "Yerevan"}
 
-options = (("A. 3", "B. 4", "C. 7", "D. 10"),
-           ("A. Claude Monet", "B. Vincent van Gogh ", "C. Jimi Hendrix", "D. Leonardo da Vinci"),
-           ("A. 8", "B. 7", "C. 14", "D. 9"),
-           ("A. Mercury", "B. Venus", "C. Mars", "D. Earth"),
-           ("A. Wormhole", "B. Singularity", "C. Event Horizon", "D. Eclipse"))
+# print(capitals.get("USA"))
+# capitals.update({"Germany":"Berling"}) #adds new element
+# capitals.update({"USA":"New York"}) #updates existing element
+# capitals.pop("Russia") #removes selected element
+# capitals.popitem() #removes last element
+# capitals.clear() #removes everything.
 
-answers = ("c", "d", "a", "b", "b")
-guesses = []
-score = 0
-question_num = 0
+# keys = capitals.keys() #return only keys
+# for key in capitals.keys():
+#     print(key)
 
-for question in questions:
-    print("––––––––––––––––––")
-    print(question)
-    for option in options[question_num]:
-        print(option)
+# values = capitals.values()
+# for value in capitals.values():
+#     print(value)
+#
+# items = capitals.items()
+# print(items)
+# works the same as
+# for key, value in capitals.items():
+#     print(f"The capital of {key} is – {value}")
 
-    guess = input("Enter you answer (a/b/c/d): ").lower()
-    guesses.append(guess)
-    if guess == answers[question_num]:
-        score += 1
-        print("Correct!")
-    else:
-        print(f"Incorrect!")
-    question_num += 1
+# CONCESSION STAND PROGRAM!
+# dictionary {key:value}
 
-print("––––––––––––––––––")
-print("––––– Results –––––")
-print("––––––––––––––––––")
+menu = {"soda(r)": 3.00,
+        "soda(l)": 4.50,
+        "popcorn(s)": 200.00,
+        "popcorn(l)": 450.50,
+        "coffee": 2.95,
+        "iced tea": 3.25,}
 
-print("Answers: ", end=" ")
-for answer in answers:
-    print(answer, end=" ")
+cart = []
+total = 0
+
+print("–––––––––Menu–––––––––")
+for key, value in menu.items():
+    print(f"{key:5}: ${value:.2f}")
+print("––––––––––––––––––––––")
+
+while True:
+    food = input("What would you like to buy? (enter q to exit): ").lower()
+    if food == "q":
+        print("Arrivederci!")
+        break
+    elif menu.get(food) is not None:
+        cart.append(food)
+
+print("––––––––––Your order–––––––––––")
+for food in cart:
+    total += menu.get(food)
+    print(food, end=" ")
+
 print()
-
-print("Your guesses: ", end=" ")
-for guess in guesses:
-    print(guess, end=" ")
-print()
-
-score = int(score / len(questions) * 100)
-print(f"Your score is: {score}%")
-
+print(f"Total is: ${total:.2f}")
