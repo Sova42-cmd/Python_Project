@@ -1,45 +1,51 @@
-# Membership operators = used to test whether a value or variable is found in a sequence.
-#                        (stirng, list, tuple, set or dictionary)
-#                        1. in
-#                        2. not in
+# List comprehension = A concise short way to create lists in Python.
+#                      Compact and easier to read than traditional loops.
+#                      [expression for value in iterable if condition]
 
-# STRING
-# word = "apple"
+# doubles = []
+# for x in range(1,11):
+#     doubles.append(x*2)
 #
-# letter = input("Guess a letter of the word: ")
+# print(doubles)
+
+#instead, write with this syntax ↓
+# [expression for value in iterable if condition]
+
+doubles = [x*2 for x in range(1,11)] #same result
+triples = [y*3 for y in range(1,11)]
+squares = [pow(z, 2) for z in range(1,11)]
+
+print(squares)
 #
-# if letter in word:
-#     print(f"The letter: {letter} is int the word")
-# else:
-#     print(f"The letter: {letter}, isn't in the word")
-
-#LIST (tuples and sets behave the same way)
-# guitarists = {"Jimi Hendrix", "Guthrie Govan", "Brian May", "Steve Vai"}
+# fruits = ["orange", "apple", "peach", "grape"]
 #
-# guitarist = input("Enter a name of famous guitarist: ")
-#
-# if guitarist in guitarists:
-#     print(f"{guitarist} is on the list!")
-# else:
-#     print(f"{guitarist} is not on the list.")
+# fruits = [fruit.capitalize() for fruit in fruits]
+# print(fruits)
 
-#DICTIONARY
-musicians = {"Guthrie Govan": "Guitarist",
-             "Chopin": "Pianist",
-             "Mike Portnoy": "Drummer",
-             "Bob Marley": "Singer"}
+numbers = [-10, -9, 1, 3, 6, -1, 42, 31, -99, 4, 7, 8, -5]
 
-musician = input("Enter the name of the musician: ")
+positive_nums = [num for num in numbers if num >= 0]
+negative_nums = [num for num in numbers if num < 0]
+even_nums = [num for num in numbers if num % 2 == 0]
+odd_nums = [num for num in numbers if not num % 2 ==0]
 
-if musician in musicians:
-    print(f"{musician} is a {musicians[musician]}")
-else:
-    print(f"{musician} not on the list")
+print(positive_nums)
+print(negative_nums)
+print(even_nums)
+print(odd_nums)
 
-#PRACTICAL EXAMPLE
-email = "steviewonder@gmail.com"
 
-if "@" in email and "." in email:
-    print("Valid email")
-else:
-    print("Invalid email, must contain '@' and '.'")
+#MATCH-CASE statement (switch) = An alternative to using many 'elif' statements.
+#                                Execute some code, if a value matches a code.
+#                                Benefits: cleaner, and syntax is more readable.
+
+def is_weekend(day):
+    match day:
+        case "Sun" | "Sat":
+            return True
+        case "Mon" | "Tue" | "Wed" | "Thu" | "Fri":
+            return False
+        case _:
+            return False
+
+print(is_weekend("Mon"))
