@@ -1,48 +1,36 @@
-# function = a block of reusable code
-#            place () after the function name to invoke it.
+# default arguments = A default value for certain parameters
+#                     Default is used when that argument is omitted(not done)
+#                     make your function more flexible, reduced number of arguments.
+#                     1. positional
+#                     2. Default
+#                     3. keyword
+#                     4. arbitrary
 
-# def function(name, age):
-#     print(f"Happy Birhtday to you! {name}")
-#     print(f"You're {age} years old!")
-#     print(f"Happy Birhtday to you! {name}")
-#     print("––––––––––––––––––––––––––––––")
-#
-# function("Sova42", 18)
-# function("Not Sova42?", 100)
-# function("Jackie Sandler (whoever you are)", 51)
+#. 1 POSITIONAL
 
-# def display_invoice(username, count, date):
-#     print(f"Hello {username}")
-#     print(f"Your bill of ${count} is due: {date}")
-#
-# display_invoice("Sova42", 190283, "25/9/2025")
+def play_song(title, instrument, duration):
+    print(f"Now playing '{title}' on {instrument} for {duration} minutes!")
 
-# def add(x,y):
-#     z = x + y
-#     return z
-#
-# def sub(x,y):
-#     z = x - y
-#     return z
-#
-# def mul(x,y):
-#     z = x * y
-#     return z
-#
-# def div(x,y):
-#     z = x/y
-#     return z
-#
-# print(add(1,2))
-# print(sub(1,2))
-# print(mul(1,2))
-# print(sub(1,2))
+# Using positional arguments
+play_song("Banana Jazz", "guitar", 5)
+play_song("Dreamscape", "piano", 7)
 
-# def name_reg(first_name, last_name):
-#     first_name = first_name.capitalize()
-#     last_name = last_name.capitalize()
-#     return first_name + " " + last_name
-#
-# full_name = name_reg("SpongeBob", "Squarepants")
-# print(f"Good to see you {full_name}")
 
+#. 2 DEFAULT
+
+# def net_price(list_price, discount=0, tax=0.05):
+#         return list_price * (1-discount) * (1+tax)
+#
+# print(net_price(500, 0.1))
+
+# COUNT UP TIMER
+#
+# import time
+#
+# def counter(end, start=0): #default arguments come after non-default
+#     for x in range(start, end+1):
+#         print(x)
+#         time.sleep(1)
+#     print("Finished")
+#
+# counter(10)
