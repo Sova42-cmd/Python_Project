@@ -1,36 +1,49 @@
-# default arguments = A default value for certain parameters
-#                     Default is used when that argument is omitted(not done)
-#                     make your function more flexible, reduced number of arguments.
-#                     1. positional
-#                     2. Default
-#                     3. keyword
-#                     4. arbitrary
+# KEYWORD ARGUMENTS = an argument preceded by an identifier.
+#                      helps with readability.
+#                      order of arguments doesn't matter.
 
-#. 1 POSITIONAL
-
-def play_song(title, instrument, duration):
-    print(f"Now playing '{title}' on {instrument} for {duration} minutes!")
-
-# Using positional arguments
-play_song("Banana Jazz", "guitar", 5)
-play_song("Dreamscape", "piano", 7)
-
-
-#. 2 DEFAULT
-
-# def net_price(list_price, discount=0, tax=0.05):
-#         return list_price * (1-discount) * (1+tax)
+# def velocity(distance, time):
+#      print(f"Velocity equals to {distance/time}")
 #
-# print(net_price(500, 0.1))
+# velocity(time=20, distance=120)
+#
+# def attack(player, weapon, damage):
+#     print(f"{player} attacks with {weapon}, dealing {damage} damage!")
+#
+# # Using keyword arguments
+# attack(damage=25, player="Sova42", weapon="bow")
+# attack(weapon="magic staff", damage=50, player="the Midnight") #order of arguments not relevant
 
-# COUNT UP TIMER
+
+# ARBITRARY ARGUMENTS
+# *args = allows you to pass multiple non-key arguments.
+# **kwargs = allows you to pass multiple keyword-arguments.
+#         * unpakcing operator
+
+# def add(*args):
+#     total = 0
+#     for arg in args:
+#         total += arg
+#     return total
 #
-# import time
+# print(add(1,2,3,12,123,312,3123)) # tuples
+
+# def display_name(*args):
+#     for arg in args:
+#         print(arg, end=" ")
 #
-# def counter(end, start=0): #default arguments come after non-default
-#     for x in range(start, end+1):
-#         print(x)
-#         time.sleep(1)
-#     print("Finished")
-#
-# counter(10)
+# display_name("Doctor", "Freeeeeman...", "I realize this moment might not be the most convenient")
+
+def print_address(**kwargs):
+    # for key in kwargs.keys():
+    #     print(key)
+    # for value in kwargs.values():
+    #     print(value)
+    for key, value in kwargs.items():
+        print(f"{key} –> {value}")
+
+print_address(street="123 St.",
+              city="Paris",
+              zip=90128,
+              apartment="321") # dictionary
+
