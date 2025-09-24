@@ -1,49 +1,45 @@
-# KEYWORD ARGUMENTS = an argument preceded by an identifier.
-#                      helps with readability.
-#                      order of arguments doesn't matter.
+# Membership operators = used to test whether a value or variable is found in a sequence.
+#                        (stirng, list, tuple, set or dictionary)
+#                        1. in
+#                        2. not in
 
-# def velocity(distance, time):
-#      print(f"Velocity equals to {distance/time}")
+# STRING
+# word = "apple"
 #
-# velocity(time=20, distance=120)
+# letter = input("Guess a letter of the word: ")
 #
-# def attack(player, weapon, damage):
-#     print(f"{player} attacks with {weapon}, dealing {damage} damage!")
+# if letter in word:
+#     print(f"The letter: {letter} is int the word")
+# else:
+#     print(f"The letter: {letter}, isn't in the word")
+
+#LIST (tuples and sets behave the same way)
+# guitarists = {"Jimi Hendrix", "Guthrie Govan", "Brian May", "Steve Vai"}
 #
-# # Using keyword arguments
-# attack(damage=25, player="Sova42", weapon="bow")
-# attack(weapon="magic staff", damage=50, player="the Midnight") #order of arguments not relevant
-
-
-# ARBITRARY ARGUMENTS
-# *args = allows you to pass multiple non-key arguments.
-# **kwargs = allows you to pass multiple keyword-arguments.
-#         * unpakcing operator
-
-# def add(*args):
-#     total = 0
-#     for arg in args:
-#         total += arg
-#     return total
+# guitarist = input("Enter a name of famous guitarist: ")
 #
-# print(add(1,2,3,12,123,312,3123)) # tuples
+# if guitarist in guitarists:
+#     print(f"{guitarist} is on the list!")
+# else:
+#     print(f"{guitarist} is not on the list.")
 
-# def display_name(*args):
-#     for arg in args:
-#         print(arg, end=" ")
-#
-# display_name("Doctor", "Freeeeeman...", "I realize this moment might not be the most convenient")
+#DICTIONARY
+musicians = {"Guthrie Govan": "Guitarist",
+             "Chopin": "Pianist",
+             "Mike Portnoy": "Drummer",
+             "Bob Marley": "Singer"}
 
-def print_address(**kwargs):
-    # for key in kwargs.keys():
-    #     print(key)
-    # for value in kwargs.values():
-    #     print(value)
-    for key, value in kwargs.items():
-        print(f"{key} –> {value}")
+musician = input("Enter the name of the musician: ")
 
-print_address(street="123 St.",
-              city="Paris",
-              zip=90128,
-              apartment="321") # dictionary
+if musician in musicians:
+    print(f"{musician} is a {musicians[musician]}")
+else:
+    print(f"{musician} not on the list")
 
+#PRACTICAL EXAMPLE
+email = "steviewonder@gmail.com"
+
+if "@" in email and "." in email:
+    print("Valid email")
+else:
+    print("Invalid email, must contain '@' and '.'")
