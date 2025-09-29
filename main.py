@@ -1,81 +1,29 @@
-# Python slot machine
-import random
+# Sphere formula program
 
-def spin_row():
-    symbols = ["⭐️", "🍒", "♥️", "🔔", "🍋"]
+# import math
+#
+# radius = float(input("Enter the radius of the sphere: "))
+#
+# volume = 4/3 * math.pi * pow(radius, 3)
+#
+# print(f"Volume of your sphere is {volume}")
 
-    return [random.choice(symbols) for _ in range(3)]
+import matplotlib.pyplot as plt
+#
+# x = [2024, 2025, 2026, 2027]
+# y =[100, 20, 120, 400]
+#
+# plt.plot(x,y)
+#
+# plt.show()
 
-def print_row(row):
+games = ["Minecraft", "Ultrakill", "Team Fortress 2", "Kingdom Rush", ]
+hours = [300, 100, 144, 80, ]  # numeric values
 
-    print(" | ".join(row))
-    print("             ")
+plt.bar(games, hours)  #games = string labels, hours = numbers
+plt.title("Time Spent in My Favorite Games")
+plt.xlabel("Games")
+plt.ylabel("Hours Played")
 
-def get_payout(row, bet):
+plt.show()
 
-    if row[0] == row[1] == row[2]:
-        if row[0] == "🍋":
-            return bet * 5
-        elif row[0] == "🍒":
-            return bet * 10
-        elif row[0] == "♥️":
-            return bet * 15
-        elif row[0] == "🔔":
-            return bet * 50
-        elif row[0] == "⭐":
-            return bet * 100
-    return 0
-
-def main():
-    balance = 100
-
-    print("––––––––––––––––––––––––")
-    print("Welcome to Python Slots!")
-    print("Symbols: ⭐️ 🍒 ♥️ 🔔 🍋")
-    print("––––––––––––––––––––––––")
-
-    while balance > 0:
-        print(f"Current balance: ${balance}")
-
-        bet = input("Place your bet: ")
-
-        if not bet.isdigit():
-            print("Invalid input, try again!")
-            continue
-
-        bet = int(bet)
-
-        if bet > balance:
-            print("Not enough money vro ;<")
-            continue
-
-        if bet <= 5:
-            print("Spin it, coward. Time to man up")
-            continue
-
-        balance -= bet
-
-        row = spin_row()
-        print("Spinning...\n")
-        print_row(row)
-        payout = get_payout(row, bet)
-
-        if payout > 0:
-            print(f"You won ${payout}, Congrats!!")
-        else:
-            print("Sorry, you lost, better luck next time!")
-
-        balance += payout
-
-        play_again = input("Spin again? (y/n): ")
-
-        if play_again != "y":
-            break
-
-    print("––––––––––––––––––––––––––––––––––––––––––––")
-    print(f"Game over! Your final balance is ${balance}")
-    print("––––––––––––––––––––––––––––––––––––––––––––")
-
-
-if __name__ == "__main__":
-    main()
